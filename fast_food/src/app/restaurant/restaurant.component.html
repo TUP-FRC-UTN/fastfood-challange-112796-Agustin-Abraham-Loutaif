@@ -1,0 +1,11 @@
+<h1>Restaurant FastFood</h1>
+<h4>Pedidos ingresados</h4>
+<p>
+    @for (pedido of pedidos; track $index) 
+        {
+          {{pedido.number}} - {{pedido.name}} - {{pedido.description}} ||
+        } 
+</p>
+<app-delivery [pedidos]="listo" (entrega)="consultarPedidos()"></app-delivery>
+<app-pos (nuevo)="consultarPedidos()"></app-pos>
+<app-kitchen [pedidos]="pendiente" (coccionar)="consultarPedidos()"></app-kitchen>

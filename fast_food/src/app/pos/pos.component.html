@@ -1,0 +1,23 @@
+<h3>Componente Point os Sell - POS</h3>
+
+<form #form="ngForm" (ngSubmit)="save(form)">
+    <div>
+        <label for="Nombre">Nombre</label>
+        <input name="Nombre" type="text" 
+        required [(ngModel)]="pedido.name" #Nombre="ngModel">
+        @if (Nombre.getError('required')) 
+        {
+            <span>Falta rellenar el campo</span>
+        }
+    </div>
+    <div>
+        <label for="Pedido">Pedido</label>
+        <input name="Pedido" type="text" 
+        required [(ngModel)]="pedido.description" #Pedido="ngModel">
+        @if (Pedido.getError('required')) 
+        {
+            <span>Falta rellenar el campo</span>
+        }
+    </div>
+    <button type="submit">Ordenar</button>
+</form>
